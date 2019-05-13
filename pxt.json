@@ -1,0 +1,24 @@
+{
+    "name": "foldio_test",
+    "version": "0.0.1",
+    "description": "foldio_test",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "ws2812b": "github:Microsoft/pxt-ws2812b#v0.0.4"
+    },
+    "files": [
+        "README.md",
+        "foldio.ts"
+    ],
+    "yotta": {
+        "config": {
+            "microbit-dal": {
+                "bluetooth": {
+                    "enabled": 0
+                }
+            }
+        }
+    },
+    "public": true
+}
