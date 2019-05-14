@@ -1,27 +1,24 @@
 namespace foldio {
-       /**
-     * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
+    /**
+	* Control of the Foldio animal.
+	*/
+	//% Id=device_no_blockID block="my block"  icon="\uF006" color=#e59920 weight=97
+    /**
+     * Do something when a pin is released.
+     * @param name the pin that needs to be released, eg: TouchPin.P0
+     * @param body the code to run when the pin is released
      */
-    //% blockId=device_foldio_leftEar block="On Left Ear touch" 
-    //%blockExternalInputs=false
-    //% shim=foldio::ltouch
-    export function lTouch (body : Action): void {
-        basic.showNumber(0)
+    //% help=input/on-pin-released weight=6 blockGap=8
+    //% blockId=device_ear_touched block="on Ear %NAME|Touched"
+	export function onEarPressed(name : TouchPin, body : Action) {
+        let pin = getPin(name);
+        if (!pin) return;
+
+        // Forces the PIN to switch to makey-makey style detection.
+        pin.isTouched();
+        pxtcore.registerWithDal(name, MICROBIT_BUTTON_EVT_CLICK, body);
     }
 
-    /**
-     * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
-     */
-    //% blockId=device_foldio_rightEar block="On right Ear touch" 
-    //%blockExternalInputs=false
-    export function rTouch(body: Action): void {
-        basic.showNumber(3)
-    }
+}
 
 }
