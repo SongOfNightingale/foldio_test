@@ -9,7 +9,7 @@ namespace foldio {
     //%blockExternalInputs=false
     //% shim=foldio::ltouch
     export function lTouch (body : Action): void {
-        input.onPinPressed(TouchPin.P0, body)
+        onPinPressed(TouchPin.P0, body)
     }
 
     /**
@@ -21,7 +21,7 @@ namespace foldio {
     //% blockId=device_foldio_rightEar block="On right Ear touch" 
     //%blockExternalInputs=false
     export function rTouch(body: Action): void {
-        input.onPinPressed(TouchPin.P3, body)
+        onPinPressed(TouchPin.P3, body)
     }
 
 }
