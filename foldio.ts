@@ -1,3 +1,7 @@
+/**
+ * Foldio functions
+ */
+//% weight=70 icon="\uf1db" color=#EC7505
 namespace foldio {
       /**
      * TODO: describe your function here
